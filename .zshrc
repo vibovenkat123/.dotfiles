@@ -1,6 +1,3 @@
-# export
-export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
-export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 # functions
 function mkcd(){
   mkdir $1
