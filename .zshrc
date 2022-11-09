@@ -17,9 +17,6 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 alias grep="grep --color=auto"
-alias cp="cp -o"
-alias rm="rm -i"
-alias mv="mv -i"
 alias sed="gsed"
 alias emacs='emacsclient -c -a emacs'
 # sourcing and path stuff
