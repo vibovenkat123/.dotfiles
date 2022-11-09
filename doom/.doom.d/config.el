@@ -22,7 +22,10 @@
 (setq doom-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 (setq display-line-numbers-type nil)
-
+(after! org
+  (setq org-ellipsis " ▼ "
+        org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
+))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
