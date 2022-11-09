@@ -19,7 +19,7 @@
 ;; accept. For example:
 ;;
 
-(setq doom-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 14)
+(setq doom-font (font-spec :family "SauceCodePro Nerd Font Mono" :size 16)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 (setq display-line-numbers-type nil)
 (after! org
