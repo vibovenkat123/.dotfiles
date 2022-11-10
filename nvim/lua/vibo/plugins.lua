@@ -14,4 +14,5 @@ return require('packer').startup(function(use)
   use 'RRethy/nvim-base16'
   use("scrooloose/nerdtree")
   use("ryanoasis/vim-devicons")
+  use 'gruvbox-community/gruvbox'
 end)

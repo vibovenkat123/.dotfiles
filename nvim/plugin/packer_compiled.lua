@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/gruvbox-community/gruvbox"
+  },
   nerdtree = {
     loaded = true,
     path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/nerdtree",
