@@ -15,4 +15,5 @@ return require('packer').startup(function(use)
   use("scrooloose/nerdtree")
   use("ryanoasis/vim-devicons")
   use 'gruvbox-community/gruvbox'
+  use 'folke/tokyonight.nvim'
 end)
