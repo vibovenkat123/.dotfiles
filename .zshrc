@@ -20,3 +20,4 @@ export NVM_DIR="$HOME/.nvm"
 # sources and paths
 eval "$(pyenv init --path)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(starship init zsh)"
