@@ -24,6 +24,8 @@ symbol = " "
 
 [elm]
 symbol = " "
+[gcloud]
+symbol = "  "
 
 [git_branch]
 symbol = " "
