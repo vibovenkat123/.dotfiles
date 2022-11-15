@@ -12,7 +12,8 @@ alias vi="nvim"
 alias grep="grep --color=auto"
 alias sed="gsed"
 alias emacs='emacsclient -c -a emacs'
-
+alias ls="exa"
+alias la="exa -la"
 # Exports
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
