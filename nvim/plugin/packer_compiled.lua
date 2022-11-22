@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/vim-devicons",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/vim-prisma",
     url = "https://github.com/pantharshit00/vim-prisma"
+  },
+  ["vim-svelte"] = {
+    loaded = true,
+    path = "/Users/vaibhav/.local/share/nvim/site/pack/packer/start/vim-svelte",
+    url = "https://github.com/evanleck/vim-svelte"
   },
   ["vim-tmux-navigator"] = {
     loaded = true,

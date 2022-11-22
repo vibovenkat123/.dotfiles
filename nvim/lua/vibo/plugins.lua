@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     'neoclide/coc.nvim',
     branch = 'release'
   }
+  use 'evanleck/vim-svelte'
   use 'pantharshit00/vim-prisma'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
