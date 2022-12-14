@@ -1,4 +1,4 @@
-vim.g.colorscheme_vibo = "tokyonight"
+vim.g.colorscheme_vibo = "rose-pine"
 require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
@@ -11,5 +11,8 @@ function color()
   vim.g.gruvbox_invert_selection = "0"
   vim.opt.background = 'dark'
   vim.cmd("colorscheme " .. vim.g.colorscheme_vibo)
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
 end
 color()
