@@ -27,4 +27,8 @@ keymap.set("n", "<leader>wm", ":MaximizerToggle<CR>")
 keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 keymap.set("n", "<leader>fw", "<CMD>Telescope live_grep<CR>")
 keymap.set("n", "<leader>sc", "<CMD>Telescope colorscheme<CR>")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
