@@ -17,7 +17,7 @@ function goto() {
 }
 function 1() {
     if tmux a -t=personal 2> /dev/null; then 
-        tmux kill-session -t=personal
+        tmux a -t=personal 
     else
         tmux new -d -s personal -c $HOME/personal
         tmux a -t=personal 2> /dev/null
@@ -25,10 +25,10 @@ function 1() {
 }
 function 2() {
     if tmux a -t=work 2> /dev/null; then 
-        tmux kill-session -t=personal
+        tmux a -t=personal 
     else
         tmux new -d -s personal -c $HOME/work
-        tmux a -t=personal
+        tmux a -t=personal 2> /dev/null
     fi 
 }
 # Aliases
@@ -41,9 +41,6 @@ alias grep="rg --color=auto"
 alias ls="exa"
 alias la="exa -la"
 # Exports
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # sources and paths
 eval "$(pyenv init --path)"
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
