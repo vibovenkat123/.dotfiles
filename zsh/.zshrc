@@ -25,10 +25,10 @@ function 1() {
 }
 function 2() {
     if tmux a -t=work 2> /dev/null; then 
-        tmux a -t=personal 
+        tmux a -t=work
     else
-        tmux new -d -s personal -c $HOME/work
-        tmux a -t=personal 2> /dev/null
+        tmux new -d -s work -c $HOME/work
+        tmux a -t=work 2> /dev/null
     fi 
 }
 # Aliases
