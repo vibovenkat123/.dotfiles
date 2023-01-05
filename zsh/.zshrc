@@ -47,4 +47,3 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
