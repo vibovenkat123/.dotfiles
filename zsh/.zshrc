@@ -3,7 +3,6 @@ function mkcd(){ # Make a directory and cd into it also
   cd $1
 }
 export PAGER=bat
-set -o vi
 function goto() {
     name=$(find work personal -type d | fzf)
     if [ "$name" = "" ]; then
