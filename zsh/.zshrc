@@ -33,7 +33,7 @@ function 2() {
 }
 # Aliases
 alias git="/opt/homebrew/bin/git"
-alias grep="ggrep"
+alias grep="ggrep --color=auto"
 alias c="code"
 alias goPersonal="cd ~/personal"
 alias goWork="cd ~/work"
