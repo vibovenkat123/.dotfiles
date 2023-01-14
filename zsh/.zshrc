@@ -33,11 +33,11 @@ function 2() {
 }
 # Aliases
 alias git="/opt/homebrew/bin/git"
+alias grep="ggrep"
 alias c="code"
 alias goPersonal="cd ~/personal"
 alias goWork="cd ~/work"
 alias vi="nvim"
-alias grep="rg --color=auto"
 alias ls="exa"
 alias la="exa -la"
 # Exports
@@ -47,3 +47,4 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+alias emulator="~/Library/Android/sdk/emulator/emulator"
