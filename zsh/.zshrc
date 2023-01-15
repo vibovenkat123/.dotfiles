@@ -32,7 +32,7 @@ function 2() {
     fi 
 }
 # Aliases
-alias rm="rm -i"
+alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
 alias grep="ggrep --color=auto"
 alias c="code"
