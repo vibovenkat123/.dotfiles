@@ -32,6 +32,7 @@ function 2() {
     fi 
 }
 # Aliases
+alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
 alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
 alias grep="ggrep --color=auto"
