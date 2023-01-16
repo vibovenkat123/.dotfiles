@@ -11,7 +11,7 @@ function mkcd(){ # Make a directory and cd into it also
 }
 export PAGER=bat
 function goto() {
-    name=$(find work personal -type d -not -path '*/.*' | fzf)
+    name=$(find $HOME/work $HOME/personal -type d -not -path '*/.*' | fzf)
     if [ "$name" = "" ]; then
         echo "No folder specified"
     elif tmux a -t=$(basename $name) 2> /dev/null; then 
