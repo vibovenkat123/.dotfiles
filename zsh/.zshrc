@@ -17,7 +17,7 @@ function goto() {
     elif tmux a -t=$(basename $name) 2> /dev/null; then 
         tmux kill-session -t=$(basename $name)
     else
-        tmux new -d -s $(basename $name) -c $HOME/$name
+        tmux new -d -s $(basename $name) -c $name
         tmux a -t=$(basename $name) 2> /dev/null
     fi
 }
@@ -36,6 +36,14 @@ function 2() {
         tmux new -d -s work -c $HOME/work
         tmux a -t=work 2> /dev/null
     fi 
+}
+function 3() {
+    if tmux a -t=dotfiles 2> /dev/null; then
+        tmux a -t=dotfiles
+    else
+        tmux new -d -s dotfiles -c $HOME/.dotfiles
+        tmux a -t=dotfiles 2> /dev/null
+    fi
 }
 # Aliases
 alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
@@ -57,3 +65,6 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/powerlevel10k/.p10k.zsh.
+[[ ! -f ~/.dotfiles/powerlevel10k/.p10k.zsh ]] || source ~/.dotfiles/powerlevel10k/.p10k.zsh
