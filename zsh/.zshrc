@@ -1,9 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 bindkey -s ^f "goto\n"
 function mkcd(){ # Make a directory and cd into it also
   mkdir $1
@@ -45,6 +39,7 @@ function 3() {
         tmux a -t=dotfiles 2> /dev/null
     fi
 }
+PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 # Aliases
 alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
 alias rmi="rm -i"
@@ -61,10 +56,4 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias emulator="~/Library/Android/sdk/emulator/emulator"
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/powerlevel10k/.p10k.zsh.
-[[ ! -f ~/.dotfiles/powerlevel10k/.p10k.zsh ]] || source ~/.dotfiles/powerlevel10k/.p10k.zsh
