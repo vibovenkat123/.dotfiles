@@ -56,4 +56,4 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias emulator="~/Library/Android/sdk/emulator/emulator"
-
+export PATH="$PATH:$(go env GOPATH)/bin"
