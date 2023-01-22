@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'neoclide/vim-jsx-improve'
   use 'gruvbox-community/gruvbox'
+  use 'rebelot/kanagawa.nvim'
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  -- or                            , branch = '0.1.x',
@@ -13,7 +14,7 @@ return require('packer').startup(function(use)
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
   })
-
+  use "sainnhe/everforest"
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')

@@ -29,8 +29,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>pv", "<cmd>Vex<CR>", { silent = true })
 
-vim.keymap.set("n", "<c-k>", "<cmd>wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<CR>")
+vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<CR>")
 vim.keymap.set("n", "<leader>w", ":close<CR>")

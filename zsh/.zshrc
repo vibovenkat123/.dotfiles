@@ -1,3 +1,4 @@
+bindkey -v 
 bindkey -s ^f "goto\n"
 function mkcd(){ # Make a directory and cd into it also
   mkdir $1
