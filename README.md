@@ -3,9 +3,10 @@
 ## INFO
 - OS?: Macos
 - Terminal?: Terminal.app
-- Editor?: Neovim for daily use, Intellij for heavier use, Vscode if I feel like it
+- Editor?: Neovim, 
 - Shell?: Zsh
 - Tmux?: Yes 
+- Colorscheme for Terminal? Onedark
 
 
 
