@@ -1,21 +1,35 @@
 bindkey -v 
-bindkey -s ^f "goto\n"
+bindkey -s ^f "tmux-sessionizer\n"
 function mkcd(){ # Make a directory and cd into it also
   mkdir $1
   cd $1
 }
-export PAGER=bat
 function goto() {
-    name=$(find $HOME/work $HOME/personal -type d -not -path '*/.*' | fzf)
-    if [ "$name" = "" ]; then
-        echo "No folder specified"
-    elif tmux a -t=$(basename $name) 2> /dev/null; then 
-        tmux kill-session -t=$(basename $name)
+    if [[ $# -eq 1 ]]; then
+        selected=$1
     else
-        tmux new -d -s $(basename $name) -c $name
-        tmux a -t=$(basename $name) 2> /dev/null
+        selected=$(find ~/work ~/projects ~/ ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)
     fi
+
+    if [[ -z $selected ]]; then
+        exit 0
+    fi
+
+    selected_name=$(basename "$selected" | tr . _)
+    tmux_running=$(pgrep tmux)
+
+    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+        tmux new-session -s $selected_name -c $selected
+        exit 0
+    fi
+
+    if ! tmux has-session -t=$selected_name 2> /dev/null; then
+        tmux new-session -ds $selected_name -c $selected
+    fi
+
+    tmux switch-client -t $selected_name
 }
+export PAGER=bat
 function 1() {
     if tmux a -t=personal 2> /dev/null; then 
         tmux a -t=personal 

@@ -6,7 +6,6 @@ end
 vim.fn.sign_define("DapBreakpoint", { text = "ß", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "ü", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "ඞ", texthl = "Error" })
-
 require("nvim-dap-virtual-text").setup {
   enabled = true,
 
