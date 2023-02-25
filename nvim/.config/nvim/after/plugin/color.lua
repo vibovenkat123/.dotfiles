@@ -11,4 +11,4 @@ require("catppuccin").setup({
     flavour = "macchiato",
     transparent_background = true,
 })
-Color('catppuccin')
+Color('rose-pine')

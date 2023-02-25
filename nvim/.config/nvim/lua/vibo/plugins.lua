@@ -13,6 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
   {
+      "rose-pine/neovim",
+      name = "rose-pine",
+      lazy=false,
+      priority=1000,
+  },
+  {
       "catppuccin/nvim",
       name = "catppuccin",
       lazy=false,
@@ -27,6 +33,7 @@ return require('lazy').setup({
 	  'nvim-telescope/telescope.nvim', version = '0.1.0',
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   },
+  { dir = "~/projects/rgpt.nvim" },
    "folke/tokyonight.nvim",
    "mfussenegger/nvim-dap",
    "leoluz/nvim-dap-go",

@@ -60,6 +60,7 @@ alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/
 alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
 alias grep="ggrep --color=auto"
+alias sed="gsed"
 alias c="code"
 alias goPersonal="cd ~/personal"
 alias goWork="cd ~/work"
