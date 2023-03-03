@@ -12,7 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
-  {
       'rose-pine/neovim',
       name = 'rose-pine',
       lazy=false,
