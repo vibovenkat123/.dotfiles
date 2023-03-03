@@ -33,7 +33,8 @@ return require('lazy').setup({
 	  'nvim-telescope/telescope.nvim', version = '0.1.0',
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   },
-  { dir = "~/projects/rgpt.nvim" },
+  { dir = "~/projects/rgpt.nvim"},
+  "tpope/vim-fugitive",
    "folke/tokyonight.nvim",
    "mfussenegger/nvim-dap",
    "leoluz/nvim-dap-go",
