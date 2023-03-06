@@ -24,8 +24,10 @@
   "playground": { "branch": "master", "commit": "c481c660fa903a0e295902b1765ecfbd6e76a556" },
   "plenary.nvim": { "branch": "master", "commit": "9a0d3bf7b832818c042aaf30f692b081ddd58bd9" },
   "rose-pine": { "branch": "main", "commit": "845a6ad5443e3559dde42910c4523a5835c9233b" },
+  "rust-tools.nvim": { "branch": "master", "commit": "71d2cf67b5ed120a0e31b2c8adb210dd2834242f" },
   "telescope-dap.nvim": { "branch": "master", "commit": "313d2ea12ae59a1ca51b62bf01fc941a983d9c9c" },
   "telescope.nvim": { "branch": "master", "commit": "b79cd6c88b3d96b0f49cb7d240807cd59b610cd8" },
   "tokyonight.nvim": { "branch": "main", "commit": "affb21a81e6d7de073378eb86d02864c594104d9" },
-  "vim-fugitive": { "branch": "master", "commit": "fa33145cc12003005b92d7e536025ed5833b9c4f" }
+  "vim-fugitive": { "branch": "master", "commit": "fa33145cc12003005b92d7e536025ed5833b9c4f" },
+  "xbase": { "branch": "master", "commit": "26a99a1534054cedb6dcca9b6c8331d11d4cf8dc" }
 }

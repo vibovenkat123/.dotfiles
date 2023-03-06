@@ -7,8 +7,12 @@ lsp.ensure_installed({
   'sumneko_lua',
   'rust_analyzer',
   'gopls',
+  'clangd',
+  'pyright',
+--  'codelldb'
+--  'vue-language-server'
 })
-
+require'lspconfig'.sourcekit.setup{}
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
     settings = {
