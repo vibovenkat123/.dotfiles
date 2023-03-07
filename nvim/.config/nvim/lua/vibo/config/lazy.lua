@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-local safe_load = require("vibo.utils").safe_load
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
@@ -13,14 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
     {
-      'rose-pine/neovim',
-      name = 'rose-pine',
+      'folke/tokyonight.nvim',
       lazy=false,
       priority=1000,
   },
   {
-      'catppuccin/nvim',
-      name = 'catppuccin',
+      'gruvbox-community/gruvbox',
       lazy=false,
       priority=1000,
   },
@@ -33,33 +30,33 @@ return require('lazy').setup({
   {
 	  'nvim-telescope/telescope.nvim', version = '0.1.0',
 	  dependencies = { {'nvim-lua/plenary.nvim'} },
-      config = function() 
-          safe_load "vibo.plugin_configs.telescope"
+      config = function()
+          require("vibo.plugins.telescope")
       end
   },
-  { 
+  {
       dir = '~/projects/rgpt.nvim',
-      config = function() 
-          safe_load 'vibo.plugin_configs.rgpt'
+      config = function()
+          require('vibo.plugins.rgpt')
       end
   },
   {
       'lewis6991/gitsigns.nvim',
       config = function()
-          safe_load 'vibo.plugin_configs.gitsigns'
+          require('vibo.plugins.gitsigns')
       end
   },
   {
       'tpope/vim-fugitive',
       config = function()
-          safe_load 'vibo.plugin_configs.dap'
+          require('vibo.plugins.fugitive')
       end
   },
    'folke/tokyonight.nvim',
    {
        'mfussenegger/nvim-dap',
         config = function()
-          safe_load 'vibo.plugin_configs.dap'
+          require('vibo.plugins.dap')
         end
    },
    'leoluz/nvim-dap-go',
@@ -68,15 +65,15 @@ return require('lazy').setup({
    'nvim-telescope/telescope-dap.nvim',
   {
       'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
-      config = function() 
-          safe_load "vibo.plugin_configs.treesitter"
+      config = function()
+          require("vibo.plugins.treesitter")
       end
   },
   'nvim-treesitter/playground',
   {
       'theprimeagen/harpoon',
-      config = function() 
-          safe_load "vibo.plugin_configs.navigate"
+      config = function()
+          require("vibo.plugins.harpoon")
       end
   },
   {
@@ -88,7 +85,7 @@ return require('lazy').setup({
         {"neovim/nvim-lspconfig"}
     },
     config = function()
-      require'xbase'.setup({})  -- see default configuration bellow
+      require('xbase').setup({})
     end
   },
    {
@@ -96,7 +93,12 @@ return require('lazy').setup({
 	  dependencies = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
+		  {
+              'williamboman/mason.nvim',
+              config = function()
+                  require("vibo.plugins.lsp")
+              end
+          },
 		  {'williamboman/mason-lspconfig.nvim'},
 
 		  -- Autocompletion
@@ -110,8 +112,8 @@ return require('lazy').setup({
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
-          config = function() 
-              safe_load "vibo.plugin_configs.lsp"
+          config = function()
+              require("vibo.plugins.lsp")
           end
 	  },
 }
