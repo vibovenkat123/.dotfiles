@@ -74,6 +74,7 @@ alias goPersonal="cd ~/personal"
 alias goWork="cd ~/work"
 alias vi="nvim"
 # Exports
+export icloud_path="~/Library/Mobile\\ Documents/com~apple~CloudDocs/"
 # sources and paths
 eval "$(pyenv init --path)"
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
