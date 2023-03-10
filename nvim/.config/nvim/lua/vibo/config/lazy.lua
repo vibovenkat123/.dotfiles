@@ -17,28 +17,24 @@ return require('lazy').setup({
       priority=1000,
   },
   {
-      'gruvbox-community/gruvbox',
-      lazy=false,
-      priority=1000,
-  },
-  "simrat39/rust-tools.nvim",
-  {
-      'arcticicestudio/nord-vim',
-      lazy=false,
-      priority=1000,
+      "simrat39/rust-tools.nvim",
+      ft = "rs",
+      event = "VeryLazy"
   },
   {
-	  'nvim-telescope/telescope.nvim', version = '0.1.0',
+	'nvim-telescope/telescope.nvim', version = '0.1.0',
 	  dependencies = { {'nvim-lua/plenary.nvim'} },
       config = function()
           require("vibo.plugins.telescope")
-      end
+      end,
+      event = "VeryLazy"
   },
   {
       dir = '~/projects/rgpt.nvim',
       config = function()
           require('vibo.plugins.rgpt')
-      end
+      end,
+      event = "VeryLazy"
   },
   {
       'lewis6991/gitsigns.nvim',
@@ -47,34 +43,66 @@ return require('lazy').setup({
       end
   },
   {
+      "nvim-neorg/neorg",
+      build = ":Neorg sync-parsers",
+      opts = {
+          load = {
+              ["core.defaults"] = {}, -- Loads default behaviour
+              ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+              ["core.norg.dirman"] = { -- Manages Neorg workspaces
+              config = {
+                  workspaces = {
+                      work = "~/work/notes",
+                      personal = "~/personal/notes",
+                  },
+              },
+          },
+      },
+  },
+  dependencies = { { "nvim-lua/plenary.nvim" } },
+   },
+  {
       'tpope/vim-fugitive',
       config = function()
           require('vibo.plugins.fugitive')
-      end
+      end,
+      event = "VeryLazy"
   },
-   'folke/tokyonight.nvim',
    {
        'mfussenegger/nvim-dap',
         config = function()
           require('vibo.plugins.dap')
-        end
+        end,
+        event = "VeryLazy"
    },
-   'leoluz/nvim-dap-go',
-   'rcarriga/nvim-dap-ui',
-   'theHamsta/nvim-dap-virtual-text',
-   'nvim-telescope/telescope-dap.nvim',
+   {
+       'leoluz/nvim-dap-go',
+       event = "VeryLazy"
+   },
+   {
+        'rcarriga/nvim-dap-ui',
+       event = "VeryLazy"
+   },
+   {
+        'theHamsta/nvim-dap-virtual-text',
+	event = "VeryLazy"
+   },
+   {
+	event = "VeryLazy",
+	'nvim-telescope/telescope-dap.nvim',
+   },
   {
       'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
       config = function()
           require("vibo.plugins.treesitter")
       end
   },
-  'nvim-treesitter/playground',
   {
       'theprimeagen/harpoon',
       config = function()
           require("vibo.plugins.harpoon")
-      end
+      end,
+      event = "VeryLazy"
   },
   {
     'xbase-lab/xbase',
@@ -86,7 +114,8 @@ return require('lazy').setup({
     },
     config = function()
       require('xbase').setup({})
-    end
+    end,
+    event = "VeryLazy"
   },
    {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -95,9 +124,6 @@ return require('lazy').setup({
 		  {'neovim/nvim-lspconfig'},
 		  {
               'williamboman/mason.nvim',
-              config = function()
-                  require("vibo.plugins.lsp")
-              end
           },
 		  {'williamboman/mason-lspconfig.nvim'},
 
@@ -111,10 +137,7 @@ return require('lazy').setup({
 
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-          config = function()
-              require("vibo.plugins.lsp")
-          end
-	  },
-}
+        {'rafamadriz/friendly-snippets'},
+      }
+    }
 })

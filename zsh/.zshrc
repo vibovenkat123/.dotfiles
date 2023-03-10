@@ -4,6 +4,9 @@ function mkcd(){ # Make a directory and cd into it also
   mkdir $1
   cd $1
 }
+function brewsearch() {
+    brew list | grep $1
+}
 function goto() {
     if [[ $# -eq 1 ]]; then
         selected=$1
@@ -60,6 +63,11 @@ alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/
 alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
 alias grep="ggrep --color=auto"
+alias gcc='gcc-12'
+alias cc='gcc-12'
+alias g++='g++-12'
+alias c++='c++-12'
+alias gotoicloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias sed="gsed"
 alias c="code"
 alias goPersonal="cd ~/personal"
