@@ -122,6 +122,16 @@ require('lazy').setup({
             return vim.fn.executable 'make' == 1
         end,
     },
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help indent_blankline.txt`
+        opts = {
+            char = '┊',
+            show_trailing_blankline_indent = false,
+        },
+    },
 
     {
         -- Highlight, edit, and navigate code
