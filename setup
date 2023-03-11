@@ -1,7 +1,6 @@
 #!/bin/zsh
-chmod -R +x ./scripts
 dir=$HOME/.dotfiles
-folders=("nvim", "zsh" "tmux" "scripts")
+folders=("nvim", "zsh" "tmux" "bin")
 pushd $dir
 for folder in $folders
 do 

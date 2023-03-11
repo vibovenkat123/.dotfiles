@@ -1,12 +1,12 @@
 path+=('/opt/homebrew/bin')
-path+=("$HOME/path")
 path+=("$HOME/.emacs.d/bin")
 path+=("/opt/homebrew/sbin")
 path+=("/Applications/Postgres.app/Contents/Versions/latest/bin")
-path+=('$HOME/.cargo/env')
-path+=('~/.emacs.d/bin')
+path+=("$HOME/.cargo/env")
+rath+=("$HOME/.emacs.d/bin")
 path+="$(go env GOPATH)/bin"
-path+=('/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config')
+path+=("/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config")
+path+=("$HOME/.local/scripts")
 # gnu items
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
