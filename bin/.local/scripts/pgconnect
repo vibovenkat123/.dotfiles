@@ -14,4 +14,4 @@ else
     port=$4
     db=$5
 fi
-PGPASSWORD=$pwd psql -h $host -U $user -p $port -d $5
+PGPASSWORD=$pwd psql -h $host -U $user -p $port -d $db

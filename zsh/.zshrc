@@ -69,6 +69,7 @@ alias g++='g++-12'
 alias c++='c++-12'
 alias gotoicloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 alias sed="gsed"
+alias find="gfind"
 alias c="code"
 alias goPersonal="cd ~/personal"
 alias goWork="cd ~/work"
