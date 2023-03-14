@@ -25,20 +25,28 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-    -- NOTE: First, some plugins that don't require any configuration
-
     -- Git related plugins
     {
         'tpope/vim-fugitive',
         config = function()
             require("vibo.config.plugins.fugitive")
         end,
+        event = "VeryLazy"
     },
     'tpope/vim-rhubarb',
-
+    {
+        -- Highlight, edit, and navigate code
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        config = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+            require("vibo.config.plugins.treesitter")
+        end,
+    },
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
-
     -- NOTE: This is where your plugins related to LSP can be installed.
     --  The configuration is done below. Search for lspconfig to find it below.
     {
@@ -46,7 +54,10 @@ require('lazy').setup({
         event = "VeryLazy",
         config = function()
             require("vibo.config.plugins.harpoon")
-        end
+        end,
+        dependencies = {
+            { 'nvim-lua/plenary.nvim' },
+        },
     },
     {
         "nvim-neorg/neorg",
@@ -63,10 +74,6 @@ require('lazy').setup({
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
 
-            -- Useful status updates for LSP
-            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            { 'j-hui/fidget.nvim', opts = {} },
-
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
         },
@@ -80,8 +87,6 @@ require('lazy').setup({
         'hrsh7th/nvim-cmp',
         dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
     },
-    -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim', opts = {} },
     {
         -- Adds git releated signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
@@ -91,58 +96,34 @@ require('lazy').setup({
     },
 
     {
+        "vibovenkat123/rgpt.nvim",
+        cmd = "ReviewGPT"
+    },
+
+    {
         -- The best theme
-        'folke/tokyonight.nvim',
+        'rose-pine/neovim',
+        name = 'rose-pine',
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme 'tokyonight'
+            vim.cmd.colorscheme('rose-pine')
+
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
     },
 
     -- Fuzzy Finder (files, lsp, etc)
-    {
-        'nvim-telescope/telescope.nvim',
-        version = '*',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        event = "VeryLazy",
-        config = function()
-            require("vibo.config.plugins.telescope")
-        end
-    },
 
     -- Fuzzy Finder Algorithm which requires local dependencies to be built.
     -- Only load if `make` is available. Make sure you have the system
     -- requirements installed.
     {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
-        cond = function()
-            return vim.fn.executable 'make' == 1
-        end,
-    },
-    {
-        -- Add indentation guides even on blank lines
-        'lukas-reineke/indent-blankline.nvim',
-        -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help indent_blankline.txt`
-        opts = {
-            char = '┊',
-            show_trailing_blankline_indent = false,
-        },
-    },
-
-    {
-        -- Highlight, edit, and navigate code
-        'nvim-treesitter/nvim-treesitter',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-        },
+        'ibhagwan/fzf-lua',
         config = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-            require("vibo.config.plugins.treesitter")
+            require("vibo.config.plugins.fzf")
         end,
+        event = "VeryLazy"
     },
     { import = "vibo.plugins" }
 }, {})

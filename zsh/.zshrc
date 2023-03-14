@@ -1,36 +1,13 @@
 bindkey -v 
 bindkey -s ^f "tmux-sessionizer\n"
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 function mkcd(){ # Make a directory and cd into it also
   mkdir $1
   cd $1
 }
 function brewsearch() {
     brew list | grep $1
-}
-function goto() {
-    if [[ $# -eq 1 ]]; then
-        selected=$1
-    else
-        selected=$(find ~/work ~/projects ~/ ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)
-    fi
-
-    if [[ -z $selected ]]; then
-        exit 0
-    fi
-
-    selected_name=$(basename "$selected" | tr . _)
-    tmux_running=$(pgrep tmux)
-
-    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-        tmux new-session -s $selected_name -c $selected
-        exit 0
-    fi
-
-    if ! tmux has-session -t=$selected_name 2> /dev/null; then
-        tmux new-session -ds $selected_name -c $selected
-    fi
-
-    tmux switch-client -t $selected_name
 }
 export PAGER=bat
 function 1() {
@@ -60,6 +37,7 @@ function 3() {
 PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 # Aliases
 alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
+alias ctags="`brew --prefix`/bin/ctags"
 alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
 alias grep="ggrep --color=auto"
