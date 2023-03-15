@@ -1,0 +1,136 @@
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system {
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    }
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+    -- tabs or spaces?
+    'tpope/vim-sleuth',
+
+    -- new theme I am trying
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        priority = 1000,
+        opts = {
+            disable_background = true
+        },
+        config = function()
+            vim.cmd.colorscheme("rose-pine")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        end,
+    },
+    -- for finding files
+    {
+        'nvim-telescope/telescope.nvim',
+        version = '*',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require("vibo.plugin.telescope")
+        end
+    },
+    -- to make telescope faster
+    {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+        cond = function()
+            return vim.fn.executable 'make' == 1
+        end,
+    },
+    -- to see all my errors :)
+    {
+        "folke/trouble.nvim",
+        opts = {
+            icons = false,
+        },
+    },
+    -- navigate better
+    {
+        "theprimeagen/harpoon",
+        event = "VeryLazy",
+        config = function()
+            require("vibo.plugin.harpoon")
+        end
+    },
+    -- so neovim looks good
+    {
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        config = function()
+            pcall(require('nvim-treesitter.install').update { with_sync = true })
+            require("vibo.plugin.treesitter")
+        end,
+    },
+    -- to refactor
+    {
+        "theprimeagen/refactoring.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("vibo.plugin.refactoring")
+        end,
+    },
+    {
+        -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            -- Automatically install LSPs to stdpath for neovim
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+
+            -- Useful status updates for LSP
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim', opts = {} },
+
+            -- Additional lua configuration, makes nvim stuff amazing!
+            'folke/neodev.nvim',
+        },
+    },
+
+    {
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+        config = function()
+            require("vibo.plugin.cmp")
+        end,
+    },
+    -- go in the zennnnn :D,
+    {
+        "folke/zen-mode.nvim",
+        opts = {}
+    },
+    -- git gud
+    {
+        "tpope/vim-fugitive",
+        config = function()
+            require("vibo.plugin.fugitive")
+        end
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require("vibo.plugin.gitsigns")
+        end
+    },
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            {"leoluz/nvim-dap-go"},
+            {"rcarriga/nvim-dap-ui"},
+        },
+        config = function()
+            require("vibo.plugin.dap")
+        end,
+    },
+})
