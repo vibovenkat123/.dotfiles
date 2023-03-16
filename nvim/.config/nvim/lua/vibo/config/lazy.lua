@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     -- tabs or spaces?
     'tpope/vim-sleuth',
-
+    -- best plugin
+    {
+        dir = "~/projects/rgpt.nvim",
+        cmd = "ReviewGPT"
+    },
     -- new theme I am trying
     {
         'rose-pine/neovim',
@@ -33,6 +37,7 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         version = '*',
+        event = "VeryLazy",
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require("vibo.plugin.telescope")
@@ -56,7 +61,6 @@ require('lazy').setup({
     -- navigate better
     {
         "theprimeagen/harpoon",
-        event = "VeryLazy",
         config = function()
             require("vibo.plugin.harpoon")
         end
@@ -101,6 +105,7 @@ require('lazy').setup({
         -- Autocompletion
         'hrsh7th/nvim-cmp',
         dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+        event = "InsertEnter",
         config = function()
             require("vibo.plugin.cmp")
         end,

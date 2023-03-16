@@ -61,5 +61,3 @@ autoload -U promptinit; promptinit
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias emulator="~/Library/Android/sdk/emulator/emulator"
 export PATH="$PATH:$(go env GOPATH)/bin"
-
-[ -f "/Users/vaibhav/.ghcup/env" ] && source "/Users/vaibhav/.ghcup/env" # ghcup-env
