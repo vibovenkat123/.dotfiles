@@ -19,16 +19,33 @@ require('lazy').setup({
         dir = "~/projects/rgpt.nvim",
         cmd = "ReviewGPT"
     },
-    -- new theme I am trying
+    -- themes
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        'folke/tokyonight.nvim',
         priority = 1000,
         opts = {
             disable_background = true
         },
         config = function()
-            vim.cmd.colorscheme("rose-pine")
+--            vim.cmd.colorscheme("tokyonight")
+--            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        end,
+    },
+    {
+        'gruvbox-community/gruvbox',
+        priority = 1000,
+        config = function()
+       --     vim.cmd.colorscheme("gruvbox")
+       --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+       --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        end,
+    },
+    {
+        'sainnhe/everforest',
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("everforest")
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,

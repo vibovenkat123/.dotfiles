@@ -1,9 +1,9 @@
 #!/bin/zsh
 dir=$HOME/.dotfiles
-folders=("nvim" "zsh" "tmux" "bin")
+folders=("nvim" "zsh" "tmux" "bin" "kitty")
 pushd $dir
 for folder in $folders
-do 
+do
    echo "stowing $folder"
    stow -D $folder
    stow $folder
