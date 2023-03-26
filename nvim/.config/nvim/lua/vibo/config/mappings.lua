@@ -25,7 +25,12 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- open tmux sessions
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- notes
+vim.keymap.set("n", "<leader>pn", "<cmd>silent !noteneovim<CR>")
+vim.keymap.set("n", "<leader>pm", string.format("<cmd>silent !compilemd %s<CR>", vim.fn.expand('%:p')))
 
 -- center on movement
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
@@ -38,4 +43,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- edit lazy.lua
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/vibo/config/lazy.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");

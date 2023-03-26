@@ -27,29 +27,29 @@ require('lazy').setup({
             disable_background = true
         },
         config = function()
---            vim.cmd.colorscheme("tokyonight")
---            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            --            vim.cmd.colorscheme("tokyonight")
+            --            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            --            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
     },
     {
         'gruvbox-community/gruvbox',
         priority = 1000,
         config = function()
-       --     vim.cmd.colorscheme("gruvbox")
-       --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-       --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            vim.cmd.colorscheme("gruvbox")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
     },
     {
         'sainnhe/everforest',
         priority = 1000,
         config = function()
-            vim.g.everforest_background = 'hard'
-            vim.g.everforest_transparent_background = 1
-            vim.cmd.colorscheme("everforest")
-            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            --            vim.g.everforest_background = 'hard'
+            --            vim.g.everforest_transparent_background = 1
+            --            vim.cmd.colorscheme("everforest")
+            --            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            --            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
     },
     -- for finding files
@@ -150,8 +150,8 @@ require('lazy').setup({
     {
         "mfussenegger/nvim-dap",
         dependencies = {
-            {"leoluz/nvim-dap-go"},
-            {"rcarriga/nvim-dap-ui"},
+            { "leoluz/nvim-dap-go" },
+            { "rcarriga/nvim-dap-ui" },
         },
         config = function()
             require("vibo.plugin.dap")

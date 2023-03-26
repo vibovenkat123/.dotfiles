@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pandoc $1 -o $1.pdf
+
+open $1.pdf
