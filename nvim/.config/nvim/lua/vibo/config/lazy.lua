@@ -19,38 +19,29 @@ require('lazy').setup({
         dir = "~/projects/rgpt.nvim",
         cmd = "ReviewGPT"
     },
-    -- themes
     {
-        'folke/tokyonight.nvim',
+        'rose-pine/neovim',
+        name = "rose-pine",
         priority = 1000,
         opts = {
-            disable_background = true
+            disable_background = true,
         },
         config = function()
-            --            vim.cmd.colorscheme("tokyonight")
-            --            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            --            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        end,
-    },
-    {
-        'gruvbox-community/gruvbox',
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("gruvbox")
+            vim.cmd.colorscheme("rose-pine")
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
     },
+    -- context
     {
-        'sainnhe/everforest',
-        priority = 1000,
+        'nvim-treesitter/nvim-treesitter-context',
+    },
+    --undos
+    {
+        'mbbill/undotree',
         config = function()
-            --            vim.g.everforest_background = 'hard'
-            --            vim.g.everforest_transparent_background = 1
-            --            vim.cmd.colorscheme("everforest")
-            --            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            --            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        end,
+            require("vibo.plugin.undotree")
+        end
     },
     -- for finding files
     {
@@ -139,12 +130,6 @@ require('lazy').setup({
         "tpope/vim-fugitive",
         config = function()
             require("vibo.plugin.fugitive")
-        end
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require("vibo.plugin.gitsigns")
         end
     },
     {
