@@ -1,6 +1,6 @@
 #!/bin/zsh
 dir=$HOME/.dotfiles
-folders=("nvim" "zsh" "tmux" "bin" "kitty")
+folders=("nvim" "zsh" "tmux" "bin" "neomutt")
 pushd $dir
 for folder in $folders
 do
