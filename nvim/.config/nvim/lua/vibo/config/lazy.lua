@@ -20,14 +20,16 @@ require('lazy').setup({
         cmd = "ReviewGPT"
     },
     {
-        'rose-pine/neovim',
-        name = "rose-pine",
+        'sainnhe/everforest',
         priority = 1000,
         opts = {
             disable_background = true,
         },
         config = function()
-            vim.cmd.colorscheme("rose-pine")
+            vim.g.everforest_transparent_background = 2
+            vim.g.everforest_background = 'dark'
+            vim.g.everforest_better_performance = 1
+            vim.cmd.colorscheme("everforest")
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         end,
@@ -35,6 +37,10 @@ require('lazy').setup({
     -- context
     {
         'nvim-treesitter/nvim-treesitter-context',
+    },
+    -- playground
+    {
+        "nvim-treesitter/playground",
     },
     --undos
     {
