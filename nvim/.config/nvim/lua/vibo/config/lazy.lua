@@ -90,6 +90,7 @@ require('lazy').setup({
         config = function()
             pcall(require('nvim-treesitter.install').update { with_sync = true })
             require("vibo.plugin.treesitter")
+            require("vibo.plugin.sql_format")
         end,
     },
     -- to refactor

@@ -1,4 +1,4 @@
-bindkey -v 
+bindkey -v
 bindkey -s ^f "tmux-sessionizer\n"
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -11,20 +11,20 @@ function brewsearch() {
 }
 export PAGER=bat
 function 1() {
-    if tmux a -t=personal 2> /dev/null; then 
-        tmux a -t=personal 
+    if tmux a -t=personal 2> /dev/null; then
+        tmux a -t=personal
     else
         tmux new -d -s personal -c $HOME/personal
         tmux a -t=personal 2> /dev/null
-    fi 
+    fi
 }
 function 2() {
-    if tmux a -t=work 2> /dev/null; then 
+    if tmux a -t=work 2> /dev/null; then
         tmux a -t=work
     else
         tmux new -d -s work -c $HOME/work
         tmux a -t=work 2> /dev/null
-    fi 
+    fi
 }
 function 3() {
     if tmux a -t=dotfiles 2> /dev/null; then
@@ -37,6 +37,7 @@ function 3() {
 PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 # Aliases
 alias nerdfetch="curl -fsSL https://raw.githubusercontent.com/ThatOneCalculator/NerdFetch/master/nerdfetch | sh"
+alias ls="exa"
 alias ctags="`brew --prefix`/bin/ctags"
 alias rmi="rm -i"
 alias git="/opt/homebrew/bin/git"
