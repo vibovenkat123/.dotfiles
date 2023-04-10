@@ -10,7 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
     }
 end
 vim.opt.rtp:prepend(lazypath)
-
 require('lazy').setup({
     -- tabs or spaces?
     'tpope/vim-sleuth',
@@ -22,12 +21,9 @@ require('lazy').setup({
     {
         'sainnhe/everforest',
         priority = 1000,
-        opts = {
-            disable_background = true,
-        },
         config = function()
             vim.g.everforest_transparent_background = 2
-            vim.g.everforest_background = 'dark'
+            vim.g.everforest_background = 'hard'
             vim.g.everforest_better_performance = 1
             vim.cmd.colorscheme("everforest")
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -53,7 +49,6 @@ require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         version = '*',
-        event = "VeryLazy",
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require("vibo.plugin.telescope")
@@ -104,6 +99,7 @@ require('lazy').setup({
     {
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
+        event = "BufReadPre,FileReadPre",
         dependencies = {
             -- Automatically install LSPs to stdpath for neovim
             'williamboman/mason.nvim',
@@ -145,6 +141,7 @@ require('lazy').setup({
             { "leoluz/nvim-dap-go" },
             { "rcarriga/nvim-dap-ui" },
         },
+        event = "VeryLazy",
         config = function()
             require("vibo.plugin.dap")
         end,
