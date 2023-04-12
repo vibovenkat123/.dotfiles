@@ -1,31 +1,49 @@
-vim.opt.guicursor = ""
+local opt = vim.opt
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+-- numbers
+opt.nu = true
+opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- tabs
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
+opt.cindent = true
+opt.breakindent = true
+vim.opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
+opt.linebreak = true
 
-vim.opt.smartindent = true
+-- caches
+opt.wildignore = "__pycache__"
+opt.wildignore:append { "*.o", "*~", "*.pyc", "*pycache*" }
+opt.wildignore:append { "Cargo.lock", "Cargo.Bazel.lock" }
 
-vim.opt.wrap = false
+-- Cool floating window popup menu for completion on command line (tjdevries)
+opt.pumblend = 17
+opt.wildmode = "longest:full"
+opt.wildoptions = "pum"
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+-- swap files, etc.
+opt.wrap = true
+opt.list = true
+vim.opt.listchars = "tab:> ,trail:-,nbsp:+"
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.swapfile = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+opt.colorcolumn = "80"

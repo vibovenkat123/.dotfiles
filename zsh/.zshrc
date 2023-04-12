@@ -30,10 +30,6 @@ up () {
 }
 
 # Aliases
-# confirm before bad stuff
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
 alias git="/opt/homebrew/bin/git" # git works
 alias grep="ggrep --color=auto" # get color for grep
 
@@ -58,3 +54,6 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions") # zsh functions
 # zsh suggestions
 autoload -U promptinit; promptinit
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# opam configuration
+[[ ! -r /Users/vaibhav/.opam/opam-init/init.zsh ]] || source /Users/vaibhav/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

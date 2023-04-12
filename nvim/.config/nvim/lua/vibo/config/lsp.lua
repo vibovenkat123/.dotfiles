@@ -44,6 +44,7 @@ local servers = {
   clangd = {},
   gopls = {},
   pyright = {},
+  ocamllsp = {},
   rust_analyzer = {},
   tsserver = {},
   lua_ls = {
