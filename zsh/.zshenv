@@ -1,31 +1,19 @@
 # path
-if [ -d "/opt/homebrew/bin" ]; then
-    path+=("/opt/homebrew/bin")
-fi
+path+=("/opt/homebrew/bin")
 
-if [ -d "/opt/homebrew/sbin" ]; then
-    path+=("/opt/homebrew/sbin")
-fi
+path+=("/opt/homebrew/sbin")
 
-if [ -d "/Applications/Postgres.app/Contents/Versions/latest/bin" ]; then
-    path+=("/Applications/Postgres.app/Contents/Versions/latest/bin")
-fi
+path+=("/Applications/Postgres.app/Contents/Versions/latest/bin")
 
-if [ -d "/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config" ]; then
-    path+=("/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config")
-fi
 
-if [ -d "$HOME/.cargo/env" ]; then
-    path+=("$HOME/.cargo/env")
-fi
+path+=("/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config")
 
-if [ -d "$(go env GOPATH)/bin" ]; then
-    path+=("$(go env GOPATH)/bin")
-fi
 
-if [ -d "$HOME/.local/scripts" ]; then
-    path+=("$HOME/.local/scripts")
-fi
+path+=("$HOME/.cargo/env")
+
+path+=("$(go env GOPATH)/bin")
+
+path+=("$HOME/.local/scripts")
 
 # gnu items
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
@@ -36,6 +24,7 @@ PATH="/opt/homebrew/opt/gnu-getopt/libexec/gnubin:$PATH"
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/opt/homebrew/etc/gnutls
 
 export PATH
+. "$HOME/.cargo/env"
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # gnu man
 
