@@ -29,6 +29,11 @@ up () {
   fi
 }
 
+# for dotfiles
+dtf () {
+  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+}
+
 # Aliases
 alias git="/opt/homebrew/bin/git" # git works
 alias grep="ggrep --color=auto" # get color for grep
