@@ -55,6 +55,8 @@ alias pscpu='ps auxf | sort -nr -k 3'
 export icloud_path="~/Library/Mobile\\ Documents/com~apple~CloudDocs" # so i can navigate the icloud
 # sources and paths
 eval "$(pyenv init --path)" # pyenv
+eval "$(pyenv init -)" # pyenv
+eval "$(pyenv virtualenv-init -)"
 fpath+=("$(brew --prefix)/share/zsh/site-functions") # zsh functions
 # zsh suggestions
 autoload -U promptinit; promptinit
