@@ -1,6 +1,5 @@
 import sys
 import sqlparse
-
 # TODO: Decide what to do about $/?
 #contents = contents.replace(f"${identifier}", f"__id_{identifier}")
 
