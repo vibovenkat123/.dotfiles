@@ -28,7 +28,7 @@ sketchybar --bar     height=39                                         \
                      padding_left=7                                    \
                      corner_radius=9                                   \
                      y_offset=5                                        \
-                     margin=40                                         \
+                     margin=20                                         \
                      blur_radius=0                                     \
                      notch_width=0                                     \
                                                                        \
