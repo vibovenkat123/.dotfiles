@@ -27,8 +27,6 @@ opt.wildoptions = "pum"
 
 -- swap files, etc.
 opt.wrap = true
-opt.list = true
-vim.opt.listchars = "trail:-,nbsp:+"
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
