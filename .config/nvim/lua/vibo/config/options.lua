@@ -1,5 +1,5 @@
 local opt = vim.opt
-
+opt.guicursor = ""
 -- numbers
 opt.nu = true
 opt.relativenumber = true
@@ -14,6 +14,9 @@ opt.cindent = true
 opt.breakindent = true
 vim.opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
+
+
+
 
 -- caches
 opt.wildignore = "__pycache__"
