@@ -6,4 +6,6 @@
 
 [Delve](https://github.com/go-delve/delve)
 
-[Tmux Sessionizer](https://crates.io/crates/tmux-sessionizer)
+[Neovim](https://neovim.io)
+
+[Tmux](https://github.com/tmux/tmux/wiki)
