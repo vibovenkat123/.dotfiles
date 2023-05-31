@@ -1,0 +1,2 @@
+#!/bin/sh
+tmux neww bash -c "curl wttr.in/?0; while sleep 300; do clear && curl wttr.in/?0; done & while [ : ]; do sleep 1; done"
