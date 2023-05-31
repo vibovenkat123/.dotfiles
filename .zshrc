@@ -4,12 +4,10 @@ export VISUAL=nvim  # neovim :)
 export EDITOR="$VISUAL"
 export TERM="xterm-256color" # colors
 export PAGER=bat # use bat as the default man pager
-
+export GPT4_CLI_MAX_TOKENS=400
 PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
 # functions
-
-# go up n times
 up () {
   local d=""
   local limit="$1" # the amount of times

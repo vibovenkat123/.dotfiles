@@ -1,4 +1,3 @@
-
 # path
 path+=("/opt/homebrew/bin")
 
@@ -36,5 +35,8 @@ if [ -f '/Users/vaibhav/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 if [ -f '/Users/vaibhav/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vaibhav/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
 
 export GPG_TTY=$(tty) # so gpg works
-
+get_openai_key() {
+    export OPENAI_API_KEY=$(pass openai_key | head -n 1)
+}
+export PASSWORD_STORE_DIR=~/.config/.password-store
 [ -f "/Users/vaibhav/.ghcup/env" ] && source "/Users/vaibhav/.ghcup/env" # ghcup-env
