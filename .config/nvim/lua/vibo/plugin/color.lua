@@ -1,12 +1,13 @@
 return {
-  "catppuccin/nvim",
-  name = "catppucin",
+  "folke/tokyonight.nvim",
+  name = "tokyonight",
   priority = 1000,
   opts = {
-    flavour = "mocha",
+    style = "night",
+    transparent = true,
   },
   config = function()
-    vim.cmd.colorscheme("catppuccin")
+    vim.cmd.colorscheme("tokyonight")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   end
