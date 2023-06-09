@@ -10,47 +10,14 @@ nmap { "<C-u>", "<C-u>zz" }
 nmap { "n", "nzzzv" }
 nmap { "N", "Nzzzv" }
 
-function ClearScreen()
-    local opt = vim.opt
-    opt.nu = not opt.nu:get()
-    -- togle status bar
-    if opt.laststatus:get() == 0 then
-        opt.laststatus = 2
-    else
-        opt.laststatus = 0
-    end
-    if ColorColOn then
-        opt.colorcolumn = "1"
-        vim.cmd("!tmux set -g status off")
-        ColorColOn = false
-    else
-        vim.cmd("!tmux set -g status on")
-        opt.colorcolumn = "80"
-        ColorColOn = true
-    end
-    opt.rnu = not opt.rnu:get()
-    opt.showmode = not opt.showmode:get()
-    opt.showcmd = not opt.showcmd:get()
-    opt.hidden = not opt.hidden:get()
-    opt.ruler = not opt.ruler:get()
-    opt.list = not opt.list:get()
-    if opt.listchars:get() == { tab = "» ", eol = "↲", trail = "·", extends = "…", precedes = "…" } then
-        opt.listchars = {}
-    else
-        opt.listchars = { tab = "» ", eol = "↲", trail = "·", extends = "…", precedes = "…" }
-    end
-    vim.cmd("NvimTreeClose")
-end
-
 -- copy to clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 nmap { "<leader>Y", [["+Y]] }
-nmap { "<F5>", "<cmd>lua ClearScreen()<CR>" }
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 
-nmap {"<Left>", "<cmd>silent bp<CR>"}
-nmap {"<Right>", "<cmd>silent bn<CR>"}
+nmap { "<Left>", "<cmd>silent bp<CR>" }
+nmap { "<Right>", "<cmd>silent bn<CR>" }
 nmap { "Q", "<nop>" }
 
 -- open tmux sessions
@@ -73,10 +40,3 @@ nmap { "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true } }
 
 -- edit lazy.lua
 nmap { "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/vibo/config/lazy.lua<CR>" };
-
--- ascii
-nmap {"<leader>as", "<cmd>.!toilet -w 200 -f small<CR>"}
-nmap {"<leader>aa", "<cmd>.!toilet -w 200 -f standard<CR>"}
--- box
-nmap {"<leader>al", "<cmd>.!toilet -w 200 -f term -F border<CR>"}
-

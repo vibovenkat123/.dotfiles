@@ -3,6 +3,7 @@ return {
   dependencies = {
     { "leoluz/nvim-dap-go" },
     { "rcarriga/nvim-dap-ui" },
+    { "mfussenegger/nvim-dap-python" },
   },
   event = "VeryLazy",
   config = function()
@@ -152,7 +153,11 @@ augroup END
     dap.listeners.before.event_exited["dapui_config"] = function()
       dap_ui.close()
     end
-
+    local ok, dap_python = pcall(require, "dap-python")
+    if ok then
+      local python_path = '~/.virtualenvs/debugpy/bin/python'
+      dap_python.setup(python_path)
+    end
     local ok, dap_go = pcall(require, "dap-go")
     if ok then
       dap_go.setup()

@@ -1,6 +1,11 @@
 return {
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
+  config = function()
+    require("lspconfig").dartls.setup({
+      cmd = { "dart", "language-server", "--protocol=lsp" }
+    })
+  end,
   event = "BufReadPre,FileReadPre",
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
