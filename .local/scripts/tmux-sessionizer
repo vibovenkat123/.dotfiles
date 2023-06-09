@@ -2,7 +2,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/.config ~/projects ~/personal ~/school ~/work -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find $HOME/.local/scripts $HOME/.config $HOME/projects $HOME/personal $HOME/school $HOME/work -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 if [[ -z $selected ]]; then
     exit 0

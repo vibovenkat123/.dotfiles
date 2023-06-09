@@ -1,9 +1,0 @@
-#!/bin/sh
-
-file_name="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Notes/note-$(date +%m-%d-%Y).md"
-if [ ! -f "$file_name" ]
-then
-    echo "# $(date +%m-%d-%Y)" > $file_name
-fi
-curr_date=$(date +"%I:%M %p")
-tmux neww bash -c "nvim -c \"norm Go\" -c \"norm Go## $curr_date\" -c \"norm G2o\" -c \"norm zz\" -c \"startinsert\" \"$file_name\""
