@@ -1,3 +1,0 @@
-return {
-    dir = "~/.config/boring"
-}
