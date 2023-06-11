@@ -1,0 +1,7 @@
+{
+    "editor.accessibilitySupport": "off",
+    "editor.inlineSuggest.enabled": true,
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrainsMonoNL NF"
+}
