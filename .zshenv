@@ -1,5 +1,5 @@
 # path
-path+=("/opt/homebrew/bin")
+PATH="/opt/homebrew/bin:$PATH"
 
 path+=("/opt/homebrew/sbin")
 
@@ -40,3 +40,4 @@ get_openai_key() {
 }
 export PASSWORD_STORE_DIR=~/.config/.password-store
 [ -f "/Users/vaibhav/.ghcup/env" ] && source "/Users/vaibhav/.ghcup/env" # ghcup-env
+export PATH="$PATH:/Users/vaibhav/dev_work/flutter/bin"
