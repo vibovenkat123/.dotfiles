@@ -49,7 +49,7 @@ require('lazy').setup({
 		opts = {
 			options = {
 				icons_enabled = false,
-				theme = 'onedark',
+				theme = 'gruvbox',
 				component_separators = '|',
 				section_separators = '',
 			},
@@ -90,6 +90,7 @@ vim.wo.signcolumn = 'yes'
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+vim.opt.guicursor = ""
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 vim.keymap.set("n", "J", "mzJ`z")
