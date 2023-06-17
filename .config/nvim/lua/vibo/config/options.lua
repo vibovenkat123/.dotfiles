@@ -1,8 +1,5 @@
 local opt = vim.opt
 opt.guicursor = ""
--- numbers
-opt.nu = true
-opt.relativenumber = true
 
 -- tabs
 opt.tabstop = 4
@@ -43,4 +40,3 @@ opt.isfname:append("@-@")
 
 opt.updatetime = 50
 
-opt.colorcolumn = "80"
