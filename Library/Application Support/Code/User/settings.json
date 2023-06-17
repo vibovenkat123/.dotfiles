@@ -1,7 +1,10 @@
 {
     "editor.accessibilitySupport": "off",
     "editor.inlineSuggest.enabled": true,
-    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.colorTheme": "poimandres",
     "editor.fontSize": 14,
-    "editor.fontFamily": "JetBrainsMonoNL NF"
+    "editor.fontFamily": "JetBrainsMonoNL NF",
+    "vscode-neovim.logOutputToConsole": true,
+    "vscode-neovim.neovimExecutablePaths.win32": "nvim -u NONE",
+    "vscode-neovim.neovimClean": true
 }
