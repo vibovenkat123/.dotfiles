@@ -1,10 +1,79 @@
 {
     "editor.accessibilitySupport": "off",
     "editor.inlineSuggest.enabled": true,
-    "workbench.colorTheme": "poimandres",
+    "workbench.colorTheme": "Zen",
     "editor.fontSize": 14,
     "editor.fontFamily": "JetBrainsMonoNL NF",
-    "vscode-neovim.logOutputToConsole": true,
-    "vscode-neovim.neovimExecutablePaths.win32": "nvim -u NONE",
-    "vscode-neovim.neovimClean": true
+    "editor.tokenColorCustomizations": {
+        "textMateRules": []
+    },
+    // Shift K to show type/info
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover",
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.goToDeclaration",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "f",
+                "m"
+            ],
+            "commands": [
+                "editor.action.formatDocument",
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "y"
+            ],
+            "after": [
+                "\"\"+",
+                "y",
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "<space>",
+                "y"
+            ],
+            "after": [
+                "\"\"+",
+                "y",
+            ]
+        },
+    ],
+    "editor.lineNumbers": "relative",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tabSize": 2,
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": false,
 }
