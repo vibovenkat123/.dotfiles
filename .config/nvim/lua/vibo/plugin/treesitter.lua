@@ -21,6 +21,5 @@ return {
       },
       filetype = "rs"
     }
-    require("util.sql_format")
   end
 }
