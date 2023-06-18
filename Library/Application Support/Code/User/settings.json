@@ -5,16 +5,23 @@
     "editor.fontSize": 14,
     "editor.fontFamily": "JetBrainsMonoNL NF",
     "editor.tokenColorCustomizations": {
-        "textMateRules": []
+        "textMateRules": [
+            {
+                "name": "envKeys",
+                "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+                "settings": {
+                    "foreground": "#19354900"
+                }
+            }
+        ]
     },
-    // Shift K to show type/info
     "vim.normalModeKeyBindings": [
         {
             "before": [
                 "K"
             ],
             "commands": [
-                "editor.action.showHover",
+                "editor.action.showHover"
             ]
         },
         {
@@ -23,7 +30,7 @@
                 "d"
             ],
             "commands": [
-                "editor.action.goToDeclaration",
+                "editor.action.goToDeclaration"
             ]
         },
         {
@@ -33,7 +40,7 @@
                 "n"
             ],
             "commands": [
-                "editor.action.rename",
+                "editor.action.rename"
             ]
         },
         {
@@ -43,7 +50,7 @@
                 "m"
             ],
             "commands": [
-                "editor.action.formatDocument",
+                "editor.action.formatDocument"
             ]
         },
         {
@@ -53,9 +60,9 @@
             ],
             "after": [
                 "\"\"+",
-                "y",
+                "y"
             ]
-        },
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -65,9 +72,9 @@
             ],
             "after": [
                 "\"\"+",
-                "y",
+                "y"
             ]
-        },
+        }
     ],
     "editor.lineNumbers": "relative",
     "[typescriptreact]": {
@@ -76,4 +83,7 @@
     "editor.tabSize": 2,
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "all"
 }
