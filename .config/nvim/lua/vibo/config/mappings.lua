@@ -30,9 +30,6 @@ nmap { "<leader>f", vim.lsp.buf.format }
 nmap { "<leader>pn", "<cmd>silent !noteneovim<CR>" }
 nmap { "<leader>pm", string.format("<cmd>silent !compilemd %s<CR>", vim.fn.expand('%:p')) }
 
--- center on movement
-nmap { "<C-k>", "<cmd>cnext<CR>zz" }
-nmap { "<C-j>", "<cmd>cprev<CR>zz" }
 nmap { "<leader>k", "<cmd>lnext<CR>zz" }
 nmap { "<leader>j", "<cmd>lprev<CR>zz" }
 
