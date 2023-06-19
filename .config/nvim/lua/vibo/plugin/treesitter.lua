@@ -1,6 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     dependencies = { "nvim-treesitter/playground" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
         pcall(require('nvim-treesitter.install').update { with_sync = true })
         require('nvim-treesitter.configs').setup {
