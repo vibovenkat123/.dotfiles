@@ -73,12 +73,12 @@ return {
         --  Add any additional override configuration in the following tables. They will be passed to
         --  the `settings` field of the server config. You must look up that documentation yourself.
         local servers = {
-            -- clangd = {},
-            -- gopls = {},
-            -- pyright = {},
-            -- rust_analyzer = {},
-            -- tsserver = {},
-
+            clangd = {},
+            gopls = {},
+            pyright = {},
+            rust_analyzer = {},
+            ocamllsp = {},
+            tsserver = {},
             lua_ls = {
                 Lua = {
                     workspace = { checkThirdParty = false },
@@ -98,7 +98,7 @@ return {
         mason_lspconfig.setup {
             ensure_installed = vim.tbl_keys(servers),
         }
-
+        require'lspconfig'.sourcekit.setup{}
         mason_lspconfig.setup_handlers {
             function(server_name)
                 require('lspconfig')[server_name].setup {
