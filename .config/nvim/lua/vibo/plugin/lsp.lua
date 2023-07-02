@@ -79,6 +79,9 @@ return {
             rust_analyzer = {},
             ocamllsp = {},
             tsserver = {},
+            tailwindcss = {},
+            astro = {},
+            volar = {},
             lua_ls = {
                 Lua = {
                     workspace = { checkThirdParty = false },
