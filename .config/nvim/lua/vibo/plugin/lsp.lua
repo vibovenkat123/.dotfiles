@@ -41,7 +41,7 @@ return {
 
             nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
             nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
+            vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
             nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
             nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
             nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
@@ -50,7 +50,7 @@ return {
             nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
             -- See `:help K` for why this keymap
-           nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+            nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
             nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
             -- Lesser used LSP functionality
@@ -101,7 +101,7 @@ return {
         mason_lspconfig.setup {
             ensure_installed = vim.tbl_keys(servers),
         }
-        require'lspconfig'.sourcekit.setup{}
+        require 'lspconfig'.sourcekit.setup {}
         mason_lspconfig.setup_handlers {
             function(server_name)
                 require('lspconfig')[server_name].setup {
