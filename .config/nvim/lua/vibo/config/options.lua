@@ -3,7 +3,6 @@ opt.guicursor = ""
 -- numbers
 opt.nu = true
 opt.relativenumber = true
-vim.g.netrw_banner = 0
 -- tabs
 opt.tabstop = 4
 opt.softtabstop = 4

@@ -44,6 +44,7 @@ require('lazy').setup("vibo.plugin", {
                 "tohtml",
                 "tutor",
                 "zipPlugin",
+                "netrwPlugin",
             },
         },
     },

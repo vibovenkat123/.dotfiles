@@ -16,6 +16,7 @@ return {
                 'saadparwaiz1/cmp_luasnip',
 
                 -- Adds LSP completion capabilities
+                { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
                 'hrsh7th/cmp-nvim-lsp',
 
                 -- Adds a number of user-friendly snippets
@@ -24,7 +25,7 @@ return {
         },
     },
     config = function()
-        local on_attach = function(_, bufnr)
+        local on_attach = function(client, bufnr)
             -- NOTE: Remember that lua is a real programming language, and as such it is possible
             -- to define small helper and utility functions so you don't have to repeat yourself
             -- many times.
@@ -101,7 +102,6 @@ return {
         mason_lspconfig.setup {
             ensure_installed = vim.tbl_keys(servers),
         }
-        require 'lspconfig'.sourcekit.setup {}
         mason_lspconfig.setup_handlers {
             function(server_name)
                 require('lspconfig')[server_name].setup {
@@ -111,7 +111,6 @@ return {
                 }
             end,
         }
-
         -- [[ Configure nvim-cmp ]]
         -- See `:help cmp`
         local cmp = require 'cmp'
