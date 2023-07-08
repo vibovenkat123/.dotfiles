@@ -1,6 +1,6 @@
 # path
 PATH="/opt/homebrew/bin:$PATH"
-
+[[ ! -r /Users/vaibhavvenkat/.opam/opam-init/init.zsh ]] || source /Users/vaibhavvenkat/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 path+=("/opt/homebrew/sbin")
 
 path+=("/Applications/Postgres.app/Contents/Versions/latest/bin")
@@ -41,3 +41,4 @@ get_openai_key() {
 export PASSWORD_STORE_DIR=~/.config/.password-store
 [ -f "/Users/vaibhav/.ghcup/env" ] && source "/Users/vaibhav/.ghcup/env" # ghcup-env
 export PATH="$PATH:/Users/vaibhav/dev_work/flutter/bin"
+export PATH="/Users/vaibhavvenkat/.deno/bin:$PATH"
